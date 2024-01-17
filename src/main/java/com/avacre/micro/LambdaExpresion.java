@@ -16,6 +16,7 @@ public class LambdaExpresion {
 		lst.add(new Student("Diana", 33, 2));
 		lst.add(new Student("Alanis", 6, 3));
 		lst.add(new Student("Elian", 1, 3));
+		lst.add(new Student("Maria", 1, 50));
 	}
 	
 	public static void main(String args[]) {
