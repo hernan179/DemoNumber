@@ -17,6 +17,30 @@ public class Student {
 		return "Student [name=" + name + ", age=" + age + ", deparmentId=" + deparmentId + "]";
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public Integer getDeparmentId() {
+		return deparmentId;
+	}
+
+	public void setDeparmentId(Integer deparmentId) {
+		this.deparmentId = deparmentId;
+	}
+
 	
 	
 }

@@ -12,9 +12,9 @@ public class MergePDF {
 
 		// loading all the pdf files we wish to merge
 
-		File file1 = new File("C:/Users/ASUS/Downloads/sample-1.pdf");
-		File file2 = new File("C:/Users/ASUS/Downloads/sample-2.pdf");
-		File file3 = new File("C:/Users/ASUS/Downloads/sample-33.pdf");
+		File file1 = new File("C:/Users/ASUS/Downloads/register/julio_civil_register_en.pdf");
+		File file2 = new File("C:/Users/ASUS/Downloads/register/julio_civil_register_es.pdf");
+		//File file3 = new File("C:/Users/ASUS/Downloads/sample-33.pdf");
 
 		// Instantiating PDFMergerUtility class
 
@@ -22,13 +22,13 @@ public class MergePDF {
 
 		// Setting the destination file path
 
-		obj.setDestinationFileName("C:/Users/ASUS/Downloads/PL16646-signed.pdf");
+		obj.setDestinationFileName("C:/Users/ASUS/Downloads/register/double/julio-birthdate_en_es.pdf");
 
 		// Add all source files, to be merged
 
 		obj.addSource(file1);
 		obj.addSource(file2);
-		obj.addSource(file3);
+		//obj.addSource(file3);
 
 		// Merging documents
 

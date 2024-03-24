@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    tools {
+        maven 'maven3.8.5'
+    }
+    stages {
+        stage('checout') {
+            steps {
+                git url: 'https://github.com/hernan179/DemoNumber.git',
+                branch: 'master'
+            }
+            
+        }
+        stage('Listar') {
+            steps {
+                sh 'mvn clean install -DskipTests -B -ntp'
+            }
+            
+        }
+    }
+    stage('actifactory'){
+            steps {
+                 script {
+                     echo 'actifactory...saving';
+                    def server = Artifactory.server 'artifactory-test'
+                    def repository = 'spring-petclinic-rest'
+                     echo 'actifactory...using instance '+server;
+                    def uploadSpec = """
+                        {
+                            "files": [
+                                {
+                                    "pattern": "target/.*.jar",
+                                    "target": "generate fule.jar",
+                                    "regexp": "true"
+                                }
+                            ]
+                        }
+                    """
+                    server.upload spec: uploadSpec
+                 }
+            }
+        }
+    
+}

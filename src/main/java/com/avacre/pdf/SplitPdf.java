@@ -15,7 +15,7 @@ public class SplitPdf {
   
         // Loading PDF 
         File pdffile 
-            = new File("C:/Users/ASUS/Downloads/PL16646.pdf"); 
+            = new File("C:/Users/ASUS/Downloads/CONVOCATORIA ASAMBLEA TAGUA 2024.pdf"); 
         PDDocument document = PDDocument.load(pdffile); 
   
         // Splitter Class 
@@ -32,7 +32,7 @@ public class SplitPdf {
         int j = 1; 
         while (iteration.hasNext()) { 
             PDDocument pd = iteration.next(); 
-            pd.save("C:/Users/ASUS/Downloads/sample-"
+            pd.save("C:/Users/ASUS/Downloads/CONVOCATORIA ASAMBLEA TAGUA 2024-"
                     + j++ + ".pdf"); 
         } 
         System.out.println("Splitted Pdf Successfully."); 
