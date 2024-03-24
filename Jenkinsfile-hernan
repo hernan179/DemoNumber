@@ -12,19 +12,18 @@ pipeline {
             }
             
         }
-        stage('Listar') {
+        stage('INSTALL') {
             steps {
                 sh 'mvn clean install -DskipTests -B -ntp'
             }
             
         }
-    }
-    stage('actifactory'){
+		  stage('actifactory'){
             steps {
                  script {
                      echo 'actifactory...saving';
                     def server = Artifactory.server 'artifactory-test'
-                    def repository = 'spring-petclinic-rest'
+                    def repository = 'DemoNumber'
                      echo 'actifactory...using instance '+server;
                     def uploadSpec = """
                         {
@@ -41,5 +40,7 @@ pipeline {
                  }
             }
         }
+    }
+  
     
 }
